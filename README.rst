@@ -21,7 +21,7 @@ A plate data set is identified by the header text in the preceding row. The size
 of the data set is automatically determined and the data set is extracted and
 converted into a pandas DataFrame object with format: ::
 
-      1       2       3       4       5       6       7
+      1       2       3       4       5       6       7 ::
 0
 A  19106   18954   23140   21745   24585   22294   25033
 B  18427  274628  285552  201486  245432  237888  232065
@@ -36,9 +36,9 @@ argument. Handling of opening of the file is done within the function. To iterat
 over a list of files, parse the data sets from those files, and save each data set
 to a separate file (using pandas to_csv) for example: ::
 
-  import enparser
+  from ensparser import ensparser
   for file in list_of_files:
-      data_sets = enparser.parse_csv(file)
+      data_sets = ensparser.parse_csv(file)
       for index, data_set in enumerate(data_sets):
            with open("data_set_{number}.format(number=index), "w") as out_handle:
                 data_set.to_csv(out_handle)
