@@ -35,6 +35,10 @@ setup(
         'Programming Language :: Python :: 3.4',
     ],
 
+    install_requires = {
+        pandas >= 0.16.2
+    }
+
     keywords="EnSpire, csv, parse",
     packages=find_packages(),
     include_package_data=True
