@@ -35,7 +35,7 @@ def parse_csv(file):
     # Auto detect plate size if not specified in function call arguments.
     data = enumerate(raw_data)
     first_header_index = next(index for index, row in data if row in header_text)
-    # Subtract 2, 1 for each start of line letter end of line empty string
+    # Subtract 2, 1 for each: start of line letter, end of line empty string
     num_columns = next(len(row) for index, row in data) - 2
     # Empty list follows last row of plate (Empty lists evaluate to False).
     last_plate_row = next(index for index, row in data if not row) - 1
@@ -47,7 +47,6 @@ def parse_csv(file):
 
     trimmed_data_sets = []
     for raw_data_set in raw_data_sets:
-        # Subtract 1 to account for column 0 which contains the row names
         data_set = raw_data_set.set_index(0)
         trimmed_data_set = data_set.iloc[0: num_rows, 0: num_columns]
         trimmed_data_sets.append(trimmed_data_set)
