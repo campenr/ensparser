@@ -13,6 +13,7 @@ For complete documentation see README.rst.
 """
 
 import pandas as pd
+import numpy as np
 import csv
 
 
@@ -42,7 +43,7 @@ def parse_csv(file):
     # Subtract 1 to account for row containing column headers.
     num_rows = (last_plate_row - first_header_index) - 1
 
-    raw_data_sets = [pd.DataFrame(raw_data[index + 2: index + (num_rows + 2)])
+    raw_data_sets = [pd.DataFrame(raw_data[index + 2: index + (num_rows + 2)], dtype=np.float64)
                      for index, row in enumerate(raw_data) if row in header_text]
 
     trimmed_data_sets = []
