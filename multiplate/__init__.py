@@ -1,1 +1,1 @@
-__author__ = 'Richard'
+# multiplate 0.1a1
