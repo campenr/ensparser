@@ -15,7 +15,7 @@ Bugs and issue tracking
 -----------------------
 
 This script has not been tested against all output file permutations and
-as such may incorrectly parse csv files output from certain protocols. Bug
+as such may incorrectly parse output files from certain protocols. Bug
 reports should be submitted via the github issue tracker.
 
 Description
