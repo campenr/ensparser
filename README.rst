@@ -4,10 +4,10 @@ multiplate 0.1a1
 What's new
 ----------
 
- - In changing the names and order of directories file parsing now accessed by:
- ::
- from multiplate import multiplateIO
- multiplateIO.parse_csv()
+- In changing the names and order of directories file parsing now accessed by: ::
+
+from multiplate import multiplateIO
+multiplateIO.parse_csv()
 
 Bugs and issue tracking
 -----------------------
