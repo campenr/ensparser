@@ -15,11 +15,11 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name="ensparser",
+    name="multiplate",
     version="0.1a1",
-    description="Parser for EnSpire output csv files",
+    description="Parser for multiplate reader output files",
     long_description=long_description,
-    url="https://github.com/campenr/enparser",
+    url="https://github.com/campenr/multiplate",
     author="Richard Campen",
     author_email="richard@campen.co",
     license="BSD License",
@@ -39,7 +39,7 @@ setup(
         pandas >= 0.16.2
     }
 
-    keywords="EnSpire, csv, parse",
+    keywords="EnSpire, csv, parse, multiplate",
     packages=find_packages(),
     include_package_data=True
 

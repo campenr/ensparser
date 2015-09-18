@@ -14,7 +14,7 @@ import numpy as np
 import csv
 
 
-def parse_csv(file):
+def parse_csv(handle):
     """Extract individual plate data from EnSpire output csv file.
 
     Opens file using csv.reader and iterates through the file, returning an iterator
@@ -27,8 +27,7 @@ def parse_csv(file):
                    ["Calculated results: Calc 2: Avg = "
                     "Average of the scanning points where Measurement : Meas A"]]
 
-    with open(file, "r") as in_handle:
-        raw_data = list(csv.reader(in_handle))
+    raw_data = list(csv.reader(handle))
 
     data = enumerate(raw_data)
     first_header_index = next(index for index, row in data if row in header_text)
@@ -39,7 +38,7 @@ def parse_csv(file):
     # Subtract 1 to account for row containing column headers.
     num_rows = (last_plate_row - first_header_index) - 1
 
-    raw_data_sets = [pd.DataFrame(raw_data[index + 2: index + (num_rows + 2)], dtype=np.float64)
+    raw_data_sets = [pd.DataFrame(raw_data[index + 2: index + (num_rows + 2)])
                      for index, row in enumerate(raw_data) if row in header_text]
 
     trimmed_data_sets = []
