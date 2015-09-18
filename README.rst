@@ -1,6 +1,14 @@
 multiplate 0.1a1
 ===============
 
+What's new
+----------
+
+ - In changing the names and order of directories file parsing now accessed by:
+ ::
+ from multiplate import multiplateIO
+ multiplateIO.parse_csv()
+
 Bugs and issue tracking
 -----------------------
 
@@ -39,17 +47,9 @@ the following structure:
 Usage
 -----
 
-The ``parse_csv(file)`` function takes a csv file path as a string as it's only
-argument. Handling of opening of the file is done within the function. To iterate
-over a list of files, parse the data sets from those files, and save each data set
-to a separate file (using pandas to_csv) for example: ::
-
-  from ensparser import ensparser
-  for file in list_of_files:
-      data_sets = ensparser.parse_csv(file)
-      for index, data_set in enumerate(data_sets):
-           with open("data_set_{number}.format(number=index), "w") as out_handle:
-                data_set.to_csv(out_handle)
+The ``parse_csv(file)`` function takes two arguments, a csv file path as a string,
+and format of the csv (e.g. "enspire"). ``parse_csv`` returns an iterator of the
+data sets contained within the output file.
 
 Installation
 ------------
