@@ -35,9 +35,9 @@ setup(
         'Programming Language :: Python :: 3.4',
     ],
 
-    install_requires = {
-        pandas >= 0.16.2
-    }
+    install_requires = [
+        "pandas"
+    ],
 
     keywords="EnSpire, csv, parse, multiplate",
     packages=find_packages(),
