@@ -1,9 +1,10 @@
-multiplate 0.1a1
+multiplate 0.1a2
 ===============
 
 What's new
 ----------
 
+- Refactored test directory variables in test.py to support ``python -m unittest discover``
 - In changing the names and order of directories file parsing now accessed by:
 
 ::
@@ -49,7 +50,7 @@ the following structure:
 Usage
 -----
 
-The ``parse_csv(file)`` function takes two arguments, a csv file path as a string,
+The ``parse_csv`` function takes two arguments, a csv file path as a string,
 and format of the csv (e.g. "enspire"). ``parse_csv`` returns an iterator of the
 data sets contained within the output file.
 

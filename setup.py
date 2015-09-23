@@ -16,7 +16,7 @@ with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
 
 setup(
     name="multiplate",
-    version="0.1a1",
+    version="0.1a2",
     description="Parser for multiplate reader output files",
     long_description=long_description,
     url="https://github.com/campenr/multiplate",
